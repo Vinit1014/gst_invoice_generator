@@ -27,6 +27,14 @@ app.config(function ($routeProvider) {
       templateUrl: "./Components/newClient/newClient.html",
       controller: "newClientController",
     })
+    .when("/login", {
+      templateUrl: "./Components/Login/login.html",
+      controller: "loginController",
+    })
+    .when("/register", {
+      templateUrl: "./Components/Register/register.html",
+      controller: "registerController",
+    })
     // .when("/demo", {
     //   // templateUrl: "./Components/Demo/demo.html",
     //   templateUrl: "./Components/jobList/jobList.html",
