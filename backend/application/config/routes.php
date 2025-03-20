@@ -43,6 +43,10 @@ $route['404_override'] = '';
 $route['register'] = 'AuthController/register_user';
 $route['login'] = "AuthController/login_user";
 $route['logout'] = "AuthController/logout";
+$route['generateInvoice'] = "InvoiceController/generateInvoice";
+$route['listInvoices'] = "InvoiceController/listInvoices";
+$route['createClient'] = "ListController/createClient";
+$route['listClients'] = "ListController/listClients";
 
 
 /* End of file routes.php */
