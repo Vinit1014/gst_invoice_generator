@@ -17,14 +17,14 @@
   
   .logo-image {
     width: 120px; /* Adjust logo size */
-    height: auto;
+    height: 50px;
   }
   
   /* Navbar Menu */
   .navbar {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 10px;
   }
   
   .navbar li {
@@ -35,7 +35,7 @@
     text-decoration: none;
     color: white;
     font-weight: 500;
-    padding: 10px;
+    /* padding: 5px; */
     transition: color 0.3s;
   }
   

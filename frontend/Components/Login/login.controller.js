@@ -15,7 +15,7 @@ angular
         };
 
         $http
-          .post("http://localhost/gst-invoice-generator/index.php/login", postData)
+          .post("http://localhost/gst-invoice-generator/backend/index.php/login", postData)
           .then(function (response) {
             console.log("Response from backend:", response.data);
             if (response.data.status == "success") {

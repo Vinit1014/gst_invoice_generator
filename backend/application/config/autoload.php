@@ -1,4 +1,4 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (! defined('BASEPATH')) exit('No direct script access allowed');
 /*
 | -------------------------------------------------------------------
 | AUTO-LOADER
@@ -110,6 +110,9 @@ $autoload['language'] = array();
 */
 
 $autoload['model'] = array();
+
+$autoload['libraries'] = array('database', 'session');
+
 
 
 /* End of file autoload.php */

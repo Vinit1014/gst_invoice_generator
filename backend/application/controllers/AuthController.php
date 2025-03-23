@@ -1,12 +1,14 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class AuthController extends CI_Controller {
+class AuthController extends CI_Controller
+{
 
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
-    if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-            
+        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+
             header('Access-Control-Allow-Origin: *');
             header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
             header('Access-Control-Allow-Headers: Content-Type, Authorization');
@@ -22,18 +24,9 @@ class AuthController extends CI_Controller {
         $this->load->library('form_validation'); // Load form validation library
         $this->load->helper('cookie');
     }
-    
-    // public function check_session()
-    // {
-    //     $user_id = $this->session->userdata('user_id');
-    //     if ($user_id) {
-    //         echo json_encode(['status' => 'success', 'user_id' => $user_id]);
-    //     } else {
-    //         echo json_encode(['status' => 'error', 'message' => 'No user ID found in session.']);
-    //     }
-    // }
 
-    public function checkUser(){
+    public function checkUser()
+    {
         echo json_encode(['status' => 'SADSF', 'message' => 'FSDLGJSK']);
     }
 
@@ -42,25 +35,25 @@ class AuthController extends CI_Controller {
     {
         // Validation for registration form
         $postData = json_decode(file_get_contents('php://input'), true); // Get JSON input
-        
+
         // Get user data
-        $name = $postData['name']; 
-        $email = $postData['email']; 
+        $name = $postData['name'];
+        $email = $postData['email'];
         $password = $postData['password'];
         $phone = $postData['phone'];
-        $role = $postData['role']; 
+        $role = $postData['role'];
         // $email = $this->input->post('email');
         $password = password_hash($password, PASSWORD_DEFAULT);
 
         // Save user to database
         $user_id = $this->Auth_Model->register($name, $email, $password, $phone, $role);
-    
+        
         if ($user_id) {
             // Store user_id in session
             $this->session->set_userdata('user_id', $user_id);
-            
+
             // Send success response
-            echo json_encode(['status' => 'success', 'message' => 'User registered successfully.','userId' => $user_id]);
+            echo json_encode(['status' => 'success', 'message' => 'User registered successfully.', 'userId' => $user_id]);
         } else {
             echo json_encode(['status' => 'error', 'message' => 'Failed to register user.']);
         }
@@ -81,7 +74,7 @@ class AuthController extends CI_Controller {
             // Use password_verify for secure password checking
             // if ($password==$user['password']) {
             if (password_verify($password, $user['password'])) {
-                
+
                 // Set cookie (example configuration)
                 $cookie = array(
                     'name'   => 'user_id',
@@ -93,7 +86,7 @@ class AuthController extends CI_Controller {
                 );
                 $this->input->set_cookie($cookie);
                 // Return success message
-                echo json_encode(['status' => 'success', 'message' => "User logged in successfully", "user"=>$user]);
+                echo json_encode(['status' => 'success', 'message' => "User logged in successfully", "user" => $user]);
             } else {
                 echo json_encode(['status' => 'error', 'message' => 'Invalid password']);
             }
@@ -107,30 +100,26 @@ class AuthController extends CI_Controller {
             ]);
         }
     }
-    
+
     // Logout
-    public function logout(){
+    public function logout()
+    {
         // Check if the user is logged in
         $user_id = $this->session->userdata('user_id');
-        
+
         if ($user_id) {
             // Unset all session data
             $this->session->unset_userdata('user_id');
             $this->session->unset_userdata('user');
-            
+
             // Destroy the session
             $this->session->sess_destroy();
-            
+
             // Respond with a success message
             echo json_encode(['status' => 'success', 'message' => 'You have been logged out successfully.']);
         } else {
             // User is not logged in, send an error message
             echo json_encode(['status' => 'error', 'message' => 'No active session found.']);
         }
-    
-        // Optionally, redirect the user to the login page after logging out
-        // redirect('/login');
     }
-    
 }
-?>
