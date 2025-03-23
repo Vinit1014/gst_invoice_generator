@@ -8,6 +8,8 @@
     <script src="./app.module.js"></script>
     <script src="./app.route.js"></script>
 
+    <script src="./Directives/navbar/navbar.directive.js"></script>
+
     <script src="./Components/Main/main.controller.js"></script>
     <script src="./Components/Dashboard/dashboard.controller.js"></script>
     <script src="./Components/newInvoice/newInvoice.controller.js"></script>
@@ -17,18 +19,21 @@
     <script src="./Components/Login/login.controller.js"></script>
     <script src="./Components/Register/register.controller.js"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="./styles.css"/>
-    <link rel="stylesheet" href="./Components/Main/main.css"/>
-    <link rel="stylesheet" href="./Components/Dashboard/dashboard.css"/>
-    <link rel="stylesheet" href="./Components/newInvoice/newInvoice.css"/>
-    <link rel="stylesheet" href="./Components/listInvoice/listInvoice.css"/>
-    <link rel="stylesheet" href="./Components/listClients/listClients.css"/>
-    <link rel="stylesheet" href="./Components/newClient/newClient.css"/>
-    <link rel="stylesheet" href="./Components/Login/login.css"/>
-    <link rel="stylesheet" href="./Components/Register/register.css"/>
-    
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./Components/Main/main.css" />
+    <link rel="stylesheet" href="./Components/Dashboard/dashboard.css" />
+    <link rel="stylesheet" href="./Components/newInvoice/newInvoice.css" />
+    <link rel="stylesheet" href="./Components/listInvoice/listInvoice.css" />
+    <link rel="stylesheet" href="./Components/listClients/listClients.css" />
+    <link rel="stylesheet" href="./Components/newClient/newClient.css" />
+    <link rel="stylesheet" href="./Components/Login/login.css" />
+    <link rel="stylesheet" href="./Components/Register/register.css" />
+    <link rel="stylesheet" href="./Directives/navbar/navbar.css" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
@@ -41,8 +46,9 @@
     <title>Job Listing ATOM</title>
   </head>
   <body ng-app="gst_invoice" style="margin: 0">
+    <navbar></navbar>
     <div ng-view>
-      <h1>Hello</h1>
+      <!-- <h1>Hello</h1> -->
     </div>
   </body>
 </html>
