@@ -1,3 +1,105 @@
-<div ng-controller="registerController">
-    This is {{test7}}
+<div class="signup-container" ng-controller="registerController">
+    <div class="signup-box">
+      <form name="signupForm" ng-submit="onSubmit(signupForm)" novalidate>
+        <h4 class="signup-heading">Sign Up on Instantt</h4>
+  
+        <!-- Name Input -->
+        <label class="input-label">Name</label>
+        <input
+          type="text"
+          placeholder="Name"
+          class="input-box"
+          name="name"
+          ng-model="name"
+          ng-minlength="2"
+          required
+        />
+        <div
+          ng-show="signupForm.name.$touched && signupForm.name.$invalid"
+          class="error-message"
+        >
+          Name is required and must be at least 2 characters.
+        </div>
+  
+        <!-- Email Input -->
+        <label class="input-label">Email</label>
+        <input
+          type="email"
+          placeholder="Email"
+          class="input-box"
+          name="email"
+          ng-model="email"
+          required
+        />
+        <div
+          ng-show="signupForm.email.$touched && signupForm.email.$invalid"
+          class="error-message"
+        >
+          Please enter a valid email address.
+        </div>
+
+        <!-- Phone Input -->
+        <label class="input-label">Phone*</label>
+        <input
+            type="number"
+            placeholder="Phone"
+            class="input-box"
+            name="pNumber"
+            ng-model="pNumber"
+            ng-pattern="/^\d{10}$/"
+            ng-minlength="10"
+            ng-maxlength="10"
+            required
+        />
+        <div ng-show="signupForm.pNumber.$touched && signupForm.pNumber.$error.required" class="error-message">
+            Phone number is required.
+        </div>
+        <div
+        ng-show="signupForm.pNumber.$touched && signupForm.pNumber.$error.pattern" class="error-message">
+            Phone number must be exactly 10 digits.
+        </div>
+
+        <!-- Role Selection -->
+        <label class="input-label">Role*</label>
+        <select class="input-box" name="role" ng-model="userRole" required>
+            <option value="" disabled selected>Select a Role</option>
+            <option value="admin">Admin</option>
+            <option value="staff">Staff</option>
+            <option value="accountant">Accountant</option>
+        </select>
+        <div ng-show="signupForm.role.$touched && signupForm.role.$invalid" class="error-message">
+            Please select a role.
+        </div>
+
+        <!-- Password Input -->
+        <label class="input-label">Password</label>
+        <input
+          type="password"
+          placeholder="Password"
+          class="input-box"
+          name="password"
+          ng-model="password"
+          ng-minlength="6"
+          required
+        />
+        <div
+          ng-show="signupForm.password.$touched && signupForm.password.$invalid"
+          class="error-message"
+        >
+          Password must be at least 6 characters.
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" class="btn-primary" ng-disabled="signupForm.$invalid">
+          Sign Up on Instantt
+        </button>
+
+        <!-- Link to Login -->
+        <p class="login-link">
+          Already have an account?
+          <a href="#!/login" class="link">Log in</a>
+        </p>
+      </form>
+    </div>
 </div>
+  
