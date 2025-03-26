@@ -22,7 +22,9 @@ angular
               alert("login successful!");
               console.log(response);
               localStorage.setItem("user_id", response.data.user.id);
+              localStorage.setItem("user_name", response.data.user.name);
               $rootScope.userData = response.data.user.id;
+              $rootScope.userName = response.data.user.name;
               $location.path("/dashboard");
             } else {
               alert("Error: " + response.data.message);

@@ -10,6 +10,11 @@
       <li><a href="#">About</li>
       <!-- <li><a href="#">Community<span class="material-icons">expand_more</span></a></li> -->
       <li><a href="#">Profile</a></li>
+      <li>
+        <div class="avatar" ng-click="logout()" ng-if="userName">
+          {{userName}}
+        </div>
+      </li>
     </ul>
   </div>
   

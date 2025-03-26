@@ -23,19 +23,21 @@
   /* Navbar Menu */
   .navbar {
     display: flex;
+    align-items: center;  /* Ensures vertical alignment */
     list-style: none;
     gap: 10px;
+    padding: 0;
   }
   
   .navbar li {
-    display: inline-block;
+    display: flex;  /* Makes sure the <li> aligns properly */
+    align-items: center; 
   }
   
   .navbar a {
     text-decoration: none;
     color: white;
     font-weight: 500;
-    /* padding: 5px; */
     transition: color 0.3s;
   }
   
@@ -50,3 +52,20 @@
     }
   }
   
+.avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7e22ce;
+    color: white;
+    cursor: pointer;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}

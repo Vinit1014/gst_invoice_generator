@@ -122,4 +122,8 @@ class AuthController extends CI_Controller
             echo json_encode(['status' => 'error', 'message' => 'No active session found.']);
         }
     }
+
+    public function getUser($id){
+        
+    }
 }
