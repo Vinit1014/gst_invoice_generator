@@ -16,6 +16,13 @@ angular.module("gst_invoice").directive("navbar", function ($document, $rootScop
       // Watch for changes in $rootScope.userName
       $rootScope.$watch("userName", function (newVal) {
         // if (newVal) {
+          var currentPath = $location.path();
+
+          // Avoid running the function on login or register pages
+          if (currentPath === "/login" || currentPath === "/register") {
+              return;
+          }
+          
           $scope.userName = newVal.charAt(0).toUpperCase();
           console.log("Updated userName in Navbar:", $scope.userName);
         // }
