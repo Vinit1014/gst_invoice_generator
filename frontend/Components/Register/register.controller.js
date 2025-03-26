@@ -1,11 +1,14 @@
 angular
   .module("gst_invoice")
-  .controller("registerController", function ($scope, $http, $location) {
+  .controller("registerController", function ($scope, $http, $location, $rootScope) {
     $scope.name = "";
     $scope.email = "";
     $scope.pNumber = "";
     $scope.role = "";
     $scope.password = "";
+
+    console.log($rootScope.userName);
+    
 
     $scope.onSubmit = function (signupForm) {
       if (signupForm.$valid) {
@@ -34,7 +37,9 @@ angular
               // Store user_id in local storage if available
               if (response.data.userId) {
                 localStorage.setItem("user_id", response.data.userId);
-                $location.path("/profile");
+                localStorage.setItem("user_name", response.data.userName);
+                $rootScope.userName = response.data.userName;
+                $location.path("/dashboard");
               } else {
                 alert("Error: User ID not found in response.");
               }

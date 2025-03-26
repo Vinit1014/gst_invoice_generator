@@ -47,15 +47,20 @@ class AuthController extends CI_Controller
 
         // Save user to database
         $user_id = $this->Auth_Model->register($name, $email, $password, $phone, $role);
-        
+
         if ($user_id) {
-            // Store user_id in session
             $this->session->set_userdata('user_id', $user_id);
 
-            // Send success response
-            echo json_encode(['status' => 'success', 'message' => 'User registered successfully.', 'userId' => $user_id]);
-        } else {
-            echo json_encode(['status' => 'error', 'message' => 'Failed to register user.']);
+            // Fetch user's name from database
+            $query = $this->db->get_where('users', ['id' => $user_id])->row();
+            $userName = $query->name;
+
+            echo json_encode([
+                'status' => 'success',
+                'message' => 'User registered successfully.',
+                'userId' => $user_id,
+                'userName' => $userName // Include name in response
+            ]);
         }
     }
 
@@ -121,9 +126,5 @@ class AuthController extends CI_Controller
             // User is not logged in, send an error message
             echo json_encode(['status' => 'error', 'message' => 'No active session found.']);
         }
-    }
-
-    public function getUser($id){
-        
     }
 }

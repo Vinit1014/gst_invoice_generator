@@ -7,7 +7,9 @@ angular.module("gst_invoice").directive("navbar", function ($document, $rootScop
       $scope.menuOpen = false;
 
       $rootScope.userName = localStorage.getItem("user_name") || null;
-      $scope.userName = $rootScope.userName.charAt(0).toUpperCase(); // Initialize with rootScope data
+      if ($rootScope.userName != null) {
+        $scope.userName = $rootScope.userName.charAt(0).toUpperCase(); // Initialize with rootScope data
+      }
 
       console.log("My name is " + $scope.userName);
 
