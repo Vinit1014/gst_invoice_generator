@@ -1,0 +1,108 @@
+  
+.invoice-row {
+    display: flex;
+    margin-bottom: 20px;
+}
+  
+.invoice-label {
+    margin: 10px;
+    width: 150px;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    /* justify-content: center; */
+}
+  
+/* .invoice-label::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dotted #ccc;
+} */
+  
+.required {
+    color: #e74c3c;
+    margin-left: 2px;
+}
+  
+.invoice-value {
+    flex: 1;
+}
+  
+.invoice-value input[type="text"] {
+    width: 90%;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    outline: none;
+}
+  
+.date-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+  
+.date-display {
+    position: relative;
+    flex: 1;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+  
+.date-picker {
+    border: none;
+    font-size: 14px;
+    outline: none;
+    display: none;
+    /* padding: 0.5rem 0.5rem 0.5rem 0px; */
+}
+
+  
+.picker-button-div{
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    line-height: 2.625rem;
+    padding: 0px;
+}
+
+.picker-button{
+    display: inline-flex;
+    outline: none;
+    line-height: 1.5;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: 400;
+    -webkit-box-pack: center;
+    justify-content: center;
+    vertical-align: middle;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 4px;
+    white-space: nowrap;
+    height: 1.75rem;
+    background: transparent;
+    border: none;
+    align-self: center;
+    color: rgb(177, 175, 175);
+    padding: 0px;
+    width: 2.375rem;
+    appearance: none !important;
+}
+
+  
+  .visible-date-input {
+    display: block !important;
+    position: absolute;
+    z-index: 100;
+  }
+  

@@ -1,0 +1,23 @@
+<div class="invoice-row">
+    <div class="invoice-label">
+      {{ label }} <span class="required">*</span>
+    </div>
+    <div class="invoice-value date-field">
+      <div class="date-display">
+        <input
+          id="{{ sanitizedLabel }}"
+          type="date"
+          ng-model="selectedDate"
+          class="date-picker"
+          ng-class="{'visible-date-input': isDatePickerVisible}"
+          ng-blur="hideDatePicker()"
+        />
+        <span class="formatted-date" ng-show="!isDatePickerVisible">{{ formattedDate || 'Select a date' }}</span>
+      </div>
+      <div class="picker-button-div">
+        <button type="button" class="picker-button" ng-click="toggleDatePicker()">
+          <span class="material-icons">date_range</span>
+        </button>
+      </div>
+    </div>
+  </div>

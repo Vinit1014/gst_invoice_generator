@@ -3,6 +3,6 @@
 angular
   .module("gst_invoice")
   .controller("newInvoiceController", function ($scope) {
-    $scope.test2 = "Hello invoice";
+    $scope.invoiceNumber = "A0005";
 });
 

@@ -6,7 +6,6 @@
         <h1 class="invoice-title">GST Invoice</h1>
         <button class="add-subtitle-btn">
           <span class="plus-icon">+</span> Add Sub Title
-          <span class="flag-icon">🚩</span>
         </button>
       </div>
 
@@ -18,30 +17,15 @@
                 Invoice No<span class="required">*</span>
               </div>
               <div class="invoice-value">
-                <input type="text" />
+                <input type="text" ng-model="invoiceNumber" name="invoiceNumber" />
                 <div class="invoice-hint">
                   LatestInvoice No: A00002(Mar 19, 2025)
                 </div>
               </div>
             </div>
-    
-            <div class="invoice-row">
-              <div class="invoice-label">
-                Invoice Date<span class="required">*</span>
-              </div>
-              <div class="invoice-value date-field">
-                <div class="date-display"></div>
-                <input type="date" class="date-picker" />
-              </div>
-            </div>
-    
-            <div class="invoice-row">
-              <div class="invoice-label">Due Date</div>
-              <div class="invoice-value date-field">
-                <div class="date-display"></div>
-                <input type="date" value="{dueDate}" class="date-picker" />
-              </div>
-            </div>
+            <date-picker label="Invoice Date" selected-date="invoiceDate"></date-picker>
+            <date-picker label="Due Date" selected-date="dueDate"></date-picker>
+            
           </div>
     
           <button class="add-fields-btn">
@@ -51,7 +35,11 @@
     
         <div class="logo-upload">
           <div class="logo-placeholder">
-            <div class="image-icon">🖼️</div>
+            <div class="image-icon">
+              <span class="material-icons">
+                collections
+                </span>
+            </div>
             <div class="logo-text">Add Business Logo</div>
             <div class="logo-hint">Resolution up to 1080×1080px.</div>
             <div class="logo-hint">PNG or JPEG file.</div>
