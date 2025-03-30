@@ -250,3 +250,11 @@
     width: 2.375rem;
     appearance: none !important;
 }
+
+/* ----------------------------------- */
+
+.billing-container{
+    gap: 2rem;
+    display: flex;
+}
+

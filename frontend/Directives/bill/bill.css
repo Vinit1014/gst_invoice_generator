@@ -1,0 +1,203 @@
+
+/* Main container styles */
+.main-container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #f7f7f9;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 42rem;
+}
+
+/* Billed By section styles */
+.billed-by-container {
+    width: 445px;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f8f8f8;
+}
+  
+.billed-by-header {
+    margin-bottom: 1.5rem;
+}
+  
+.billed-by-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+  
+.billed-by-subtitle {
+    font-size: 1.125rem;
+    color: #6b7280;
+    margin: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #d1d5db;
+}
+  
+  /* Company selector styles */
+.company-selector {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+  
+.company-info {
+    display: flex;
+    align-items: center;
+}
+  
+.company-avatar {
+    width: 2rem;
+    height: 2rem;
+    background-color: #1f2937;
+    color: white;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.75rem;
+    font-weight: 500;
+}
+  
+.company-name {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+  
+.dropdown-arrow {
+    transition: transform 0.2s ease;
+}
+  
+/* .dropdown-arrow.open {
+    transform: rotate(180deg);
+} */
+  
+/* Business details card styles */
+.business-details-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+  
+.business-details-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.business-details-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin: 0;
+}
+  
+.edit-button {
+    color: #8a3ffc;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1rem;
+}
+
+.edit-button .material-icons {
+    margin: 1px 4px;
+    font-size: 16px;
+}
+  
+/* Business details grid */
+.business-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+  
+.detail-label {
+    color: #6b7280;
+}
+  
+.detail-value {
+    font-weight: 500;
+}
+  
+  /* Global styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+  
+* {
+    box-sizing: border-box;
+}
+  
+ /* --------------------- */
+
+ .dropdown-panel {
+    position: absolute;
+    top: 100%; /* Position below the .company-selector */
+    left: 20%;   /* Align with left edge */
+    z-index: 9999; /* Ensure it appears above other elements */
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-width: 200px; /* Adjust width as needed */
+}
+  
+  /* Sample item styling */
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    cursor: pointer;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f2f2f2;
+  }
+  
+  /* .company-avatar {
+    width: 32px;
+    height: 32px;
+    background-color: #eee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+  } */
+  
+  .add-business-btn {
+    margin-top: 8px;
+    width: 100%;
+    background-color: #7a3cff;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-business-btn:hover {
+    background-color: #6b35e0;
+  }

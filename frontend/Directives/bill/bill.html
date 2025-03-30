@@ -1,0 +1,52 @@
+<div class="billed-by-container">
+    <div class="billed-by-header">
+      <h2 class="billed-by-title">{{ headerTitle }}</h2>
+      <p class="billed-by-subtitle">{{ subtitle }}</p>
+    </div>
+  
+    <div class="company-selector">
+      <div class="company-info">
+        <div class="company-avatar">
+          <span>{{ companyInitial }}</span>
+        </div>
+        <span class="company-name">{{ companyName }}</span>
+      </div>
+      <span class=" dropdown-arrow material-icons" ng-click="isOpen = !isOpen">
+        {{ isOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+      </span>
+    </div>
+  
+    <div class="business-details-card">
+      <div class="business-details-header">
+        <h3 class="business-details-title">Business details</h3>
+        <button class="edit-button">
+            <span class="material-icons">
+                edit
+                </span>
+          <span>Edit</span>
+        </button>
+      </div>
+  
+      <div class="business-details-grid">
+        <div class="detail-label">Business Name</div>
+        <div class="detail-value">{{ companyName }}</div>
+  
+        <div class="detail-label">Address</div>
+        <div class="detail-value">{{ address }}</div>
+      </div>
+    </div>
+
+    <!-- Dropdown panel: shows when isOpen is true -->
+    <div class="dropdown-panel" ng-show="isOpen">
+        <div class="dropdown-item">
+          <div class="company-avatar">
+            <span>A</span>
+          </div>
+          <span>ABC Firm</span>
+        </div>
+        <button class="add-business-btn">Add New Business</button>
+      </div>
+    </div>
+
+</div>
+  
