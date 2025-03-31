@@ -51,7 +51,7 @@
           </div>
           <span>ABC Firm</span>
         </div>
-        <button class="add-business-btn" ng-click="openDialog()">{{type}}</button>
+        <button ng-if="headerTitle === 'Billed To'" class="add-business-btn" ng-click="openDialog()">{{type}}</button>
       </div>
     </div>
 </div>
