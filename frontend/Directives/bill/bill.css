@@ -55,7 +55,11 @@
     margin-bottom: 1rem;
     cursor: pointer;
 }
-  
+
+.company-selector:hover{
+    border: 1px solid rgb(188, 53, 188);
+}
+
 .company-info {
     display: flex;
     align-items: center;
@@ -151,10 +155,10 @@ body {
   
  /* --------------------- */
 
- .dropdown-panel {
-    position: absolute;
+.dropdown-panel {
+    position: relative;
     top: 100%; /* Position below the .company-selector */
-    left: 20%;   /* Align with left edge */
+    left: 0;/* Align with left edge */
     z-index: 9999; /* Ensure it appears above other elements */
     background-color: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
@@ -162,19 +166,20 @@ body {
     border: 1px solid #ccc;
     padding: 10px;
     min-width: 200px; /* Adjust width as needed */
+    margin-top: -164px;
 }
   
-  /* Sample item styling */
-  .dropdown-item {
+/* Sample item styling */
+.dropdown-item {
     display: flex;
     align-items: center;
     padding: 8px 0;
     cursor: pointer;
-  }
+}
   
-  .dropdown-item:hover {
+.dropdown-item:hover {
     background-color: #f2f2f2;
-  }
+}
   
   /* .company-avatar {
     width: 32px;
@@ -187,7 +192,7 @@ body {
     margin-right: 8px;
   } */
   
-  .add-business-btn {
+.add-business-btn {
     margin-top: 8px;
     width: 100%;
     background-color: #7a3cff;
@@ -196,8 +201,77 @@ body {
     padding: 8px;
     border-radius: 4px;
     cursor: pointer;
-  }
+}
   
-  .add-business-btn:hover {
+.add-business-btn:hover {
     background-color: #6b35e0;
-  }
+}
+
+.add-client-btn{
+    gap: 4px;
+    display: inline-flex;
+    outline: none;
+    width: auto;
+    line-height: 1.5;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: 400;
+    -webkit-box-pack: center;
+    justify-content: center;
+    vertical-align: middle;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 4px;
+    color: white;
+    height: 2.375rem;
+    padding: 0px 1.5rem;
+    white-space: nowrap;
+    background-color: #8a3ffc;
+    border: 1px solid #6d2bcf;
+    appearance: none !important;
+}
+
+.add-client-btn .material-icons{
+    font-size: 18px;
+}
+
+.select-client{
+    display: block;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0px;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.select-add{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 100%;
+}
+
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.dialog-box {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+}
+  

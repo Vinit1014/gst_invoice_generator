@@ -17,7 +17,14 @@
     </div>
   
     <div class="business-details-card">
-      <div class="business-details-header">
+      <div class="select-add" ng-if="headerTitle === 'Billed To' && !address">
+        <span class="select-client">Select a Client/Business from list</span>
+        <span class="select-client">Or</span>
+        <button class="add-client-btn"><span class="material-icons">
+          add_circle
+          </span>Add new client</button>
+      </div>
+      <div ng-if="address !=''" class="business-details-header">
         <h3 class="business-details-title">Business details</h3>
         <button class="edit-button">
             <span class="material-icons">
@@ -27,7 +34,7 @@
         </button>
       </div>
   
-      <div class="business-details-grid">
+      <div ng-if="address !=''" class="business-details-grid">
         <div class="detail-label">Business Name</div>
         <div class="detail-value">{{ companyName }}</div>
   
@@ -44,9 +51,8 @@
           </div>
           <span>ABC Firm</span>
         </div>
-        <button class="add-business-btn">Add New Business</button>
+        <button class="add-business-btn" ng-click="openDialog()">{{type}}</button>
       </div>
     </div>
-
 </div>
   

@@ -23,7 +23,7 @@ app.config(function ($routeProvider) {
       templateUrl: "./Components/listClients/listClients.html",
       controller: "listClientsController",
     })
-    .when("/vinit/clients/id", {
+    .when("/vinit/clients/new", {
       templateUrl: "./Components/newClient/newClient.html",
       controller: "newClientController",
     })
